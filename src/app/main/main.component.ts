@@ -1,5 +1,5 @@
 import { Component, effect, signal } from '@angular/core';
-import { BaseStudentDocItem, getDataJoao } from '../../data/joao';
+import { BaseStudentDocItem, getDataJoao } from '../data/joao';
 import { TableModule } from 'primeng/table';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ButtonModule } from 'primeng/button';
@@ -16,8 +16,8 @@ type StudentDocItem = BaseStudentDocItem & {
   selector: 'app-assistente-dashboard',
   standalone: true,
   imports: [TableModule, ToggleButtonModule, ButtonModule, FormsModule],
-  templateUrl: './assistente-dashboard.component.html',
-  styleUrl: './assistente-dashboard.component.css',
+  templateUrl: './main.component.html',
+  styleUrl: './main.component.scss',
 })
 export class AssistenteDashboardComponent {
   intialData: StudentDocItem[] = getDataJoao().map((item) => ({
@@ -57,8 +57,6 @@ export class AssistenteDashboardComponent {
   ];
 
   data = this.intialData;
-
-  constructor() {}
 
   test(x: any) {
     console.log({ x });
